@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>アニメ特撮反応局 動画投稿ツール</title>
+<meta name="description" content="YouTubeチャンネル「アニメ特撮反応局」の運営者が、自身のチャンネルへ動画をアップロードするために使う個人用ツールの説明ページです。">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e3e3e3;
+    --accent:#c62828; --card:#fafafa; --link:#0b57d0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#121212; --fg:#ececec; --muted:#a6a6a6; --line:#2e2e2e;
+      --accent:#ef5350; --card:#1b1b1b; --link:#8ab4f8;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#121212; --fg:#ececec; --muted:#a6a6a6; --line:#2e2e2e;
+    --accent:#ef5350; --card:#1b1b1b; --link:#8ab4f8;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    line-height:1.85; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:56px 16px 72px}
+  .badge{
+    display:inline-block; background:var(--accent); color:#fff;
+    font-size:13px; font-weight:700; padding:4px 12px; border-radius:999px;
+    letter-spacing:.04em;
+  }
+  h1{font-size:28px; line-height:1.4; margin:18px 0 10px; letter-spacing:.01em}
+  h2{font-size:19px; margin:44px 0 12px; padding-bottom:8px; border-bottom:1px solid var(--line)}
+  p{margin:0 0 16px}
+  .lead{color:var(--muted); margin-bottom:34px}
+  ul{margin:0 0 16px; padding-left:1.3em}
+  li{margin-bottom:7px}
+  table{width:100%; border-collapse:collapse; margin:0 0 16px; font-size:15px}
+  th,td{border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top}
+  th{background:var(--card); font-weight:700; white-space:nowrap}
+  code{
+    background:var(--card); border:1px solid var(--line); border-radius:4px;
+    padding:1px 6px; font-size:.9em; word-break:break-all;
+  }
+  a{color:var(--link)}
+  .note{
+    background:var(--card); border-left:3px solid var(--accent);
+    padding:14px 16px; margin:0 0 16px; border-radius:0 6px 6px 0;
+  }
+  footer{
+    margin-top:56px; padding-top:22px; border-top:1px solid var(--line);
+    color:var(--muted); font-size:14px;
+  }
+  footer a{margin-right:18px; display:inline-block}
+  @media (max-width:520px){
+    .wrap{padding:36px 16px 56px}
+    h1{font-size:23px}
+    table{font-size:14px}
+    th,td{padding:8px 9px}
+    th{white-space:normal}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="badge">個人用ツール</span>
+  <h1>アニメ特撮反応局<br>動画投稿ツール</h1>
+  <p class="lead">
+    YouTubeチャンネル「アニメ特撮反応局」の運営者が、自分のPCで作成した動画を
+    自分のチャンネルへアップロードするために使う、個人用のツールです。
+  </p>
+
+  <div class="note">
+    <strong>一般公開しているサービスではありません。</strong>
+    利用者はチャンネル所有者本人のみで、他の方が登録・利用することはできません。
+  </div>
+
+  <h2>このツールがすること</h2>
+  <ul>
+    <li>手元で作成済みの動画ファイルをYouTubeへアップロードする</li>
+    <li>タイトル・説明文・タグ・サムネイル画像を設定する</li>
+    <li>指定した日時に公開する予約投稿を設定する</li>
+    <li>投稿する時間帯を調整するため、自分のチャンネルの再生数を参照する</li>
+  </ul>
+
+  <h2>使用するGoogle APIの権限</h2>
+  <table>
+    <tr><th>権限（スコープ）</th><th>用途</th></tr>
+    <tr>
+      <td><code>youtube.upload</code></td>
+      <td>動画をYouTubeへアップロードするため</td>
+    </tr>
+    <tr>
+      <td><code>youtube.force-ssl</code></td>
+      <td>アップロードした動画のタイトル・公開日時・サムネイルを設定し、処理状況を確認するため</td>
+    </tr>
+    <tr>
+      <td><code>yt-analytics.readonly</code></td>
+      <td>投稿時間を調整する目的で、自分のチャンネルの再生数を参照するため</td>
+    </tr>
+  </table>
+  <p>
+    いずれの権限も、<strong>所有者自身のチャンネルに対してのみ</strong>使用します。
+    認証情報は所有者のPC内にのみ保存され、外部へ送信されません。
+    詳しくは<a href="./privacy.html">プライバシーポリシー</a>をご覧ください。
+  </p>
+
+  <h2>チャンネルについて</h2>
+  <p>
+    アニメ・特撮作品について、日本（X）と海外の視聴者の反応を対比して紹介する
+    ショート動画を投稿しています。
+  </p>
+
+  <footer>
+    <a href="./privacy.html">プライバシーポリシー</a>
+    <a href="https://www.youtube.com/channel/UC89IXZDhvsqLnVnmmcumN9g">YouTubeチャンネル</a>
+    <p style="margin-top:14px">最終更新日：2026年11月3日</p>
+  </footer>
+</div>
+</body>
+</html>
